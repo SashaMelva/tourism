@@ -53,8 +53,8 @@ func NewConfigApp(pahToFile string) Config {
 	}
 
 	configHttpServer := ConfigHttpServer{
-		Host: viper.Get("hostServerHttp").(string),
-		Port: viper.Get("portServerHttp").(string),
+		Host: viper.Get("hostHttpServer").(string),
+		Port: viper.Get("portHttpServer").(string),
 	}
 
 	level, err := zapcore.ParseLevel(viper.Get("Level").(string))
