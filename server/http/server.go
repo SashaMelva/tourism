@@ -27,7 +27,9 @@ func NewServer(log *zap.SugaredLogger, app *app.App, config *config.ConfigHttpSe
 		fmt.Fprintf(w, "Hello World!")
 	})
 
-	mux.HandleFunc("/event/", h.HendlerEvent)
+	mux.HandleFunc("/user/", h.HendlerUser)
+	mux.HandleFunc("/auth/", h.HendlerAuth)
+	mux.HandleFunc("/reg/", h.HendlerReg)
 
 	return &Server{
 		&http.Server{
